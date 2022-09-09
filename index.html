@@ -19,6 +19,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom styles -->
     <link rel="stylesheet" href="./styles/styles.css" />
     <title>WebStudio</title>
@@ -146,29 +148,32 @@
         <div class="container work-container">
           <h2 class="section-title title">Чим ми займаємося</h2>
           <ul class="list work-list">
-            <li class="list-item">
+            <li class="list-item work-list-item" data-aos="fade-left" data-aos-duration="1000">
               <img
                 src="./images/studio/wecreate.jpg"
                 alt="We create products"
                 width="370"
                 height="294"
               />
+              <h3 class="work-item-wrapper">Десктопні додатки</h3>
             </li>
-            <li class="list-item">
+            <li class="list-item work-list-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
               <img
                 src="./images/studio/weadjust.jpg"
                 alt="We can do different versions"
                 width="370"
                 height="294"
               />
+              <h3 class="work-item-wrapper">Мобільні додатки</h3>
             </li>
-            <li class="list-item">
+            <li class="list-item work-list-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
               <img
                 src="./images/studio/wedesign.jpg"
                 alt="We design products"
                 width="370"
                 height="294"
               />
+              <h3 class="work-item-wrapper">Дизайнерські рішення</h3>
             </li>
           </ul>
         </div>
@@ -178,7 +183,7 @@
         <div class="container team-container">
           <h2 class="section-title title">Наша команда</h2>
           <ul class="list team-list">
-            <li class="team-card">
+            <li class="team-card" data-aos="fade-right" data-aos-duration="1000" >
               <img
                 src="./images/studio/ihor.jpg"
                 alt="Фото Ігора Дем'яненко"
@@ -239,7 +244,7 @@
                 </ul>
               </div>
             </li>
-            <li class="team-card">
+            <li class="team-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
               <img
                 src="./images/studio/olga.jpg"
                 alt="Фото Ольги Рєпіної"
@@ -300,7 +305,7 @@
                 </ul>
               </div>
             </li>
-            <li class="team-card">
+            <li class="team-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
               <img
                 src="./images/studio/mykola.jpg"
                 alt="Фото Миколи Тарасова"
@@ -361,7 +366,7 @@
                 </ul>
               </div>
             </li>
-            <li class="team-card">
+            <li class="team-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1500">
               <img
                 src="./images/studio/myhaylo.jpg"
                 alt="Фото Михайла Єрмакова"
@@ -575,5 +580,7 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/aos-animate.js"></script>
   </body>
 </html>

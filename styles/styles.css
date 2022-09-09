@@ -11,7 +11,7 @@
   --hero-txt-cl: #ffffff;
 
   /* Background colors */
-  --accent-bg-cl: #2196f3;
+  --accent-bg-cl: #2094f3;
   --main-bg-cl: #2f303a;
   --light-bg-cl: #f5f4fa;
   --card-bg-cl: #ffffff;
@@ -125,6 +125,8 @@ img {
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -133,6 +135,19 @@ img {
 }
 .current {
   color: var(--accent-txt-cl);
+  position: relative;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  display: block;
+
+  width: 100%;
+  height: 4px;
+
+  margin-top: 28px;
+  border-radius: 4px;
+  background: var(--accent-txt-cl);
 }
 .logo {
   font-family: "Raleway";
@@ -195,6 +210,8 @@ img {
   border: none;
   border-radius: 4px;
   padding: 10px 32px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -211,11 +228,22 @@ img {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2.5px) grayscale(0.5);
+
+  transform: scale(1);
+
+  transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+    opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+
+  transform: scale(1.15);
+
+  transition: transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+    opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 }
 .modal {
   position: absolute;
@@ -250,6 +278,12 @@ img {
   padding: 0;
 
   cursor: pointer;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  fill: var(--accent-txt-cl);
 }
 
 /* Benefits */
@@ -292,6 +326,30 @@ img {
   letter-spacing: 0.03em;
   color: var(--main-title-cl);
   margin-bottom: 50px;
+}
+.work-list-item {
+  position: relative;
+}
+.work-item-wrapper {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--hero-txt-cl);
+  background-color: rgba(47, 48, 58, 0.8);
+
+  position: absolute;
+  bottom: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 70px;
+  width: 100%;
 }
 
 /* Out team */
@@ -347,6 +405,9 @@ img {
   background-color: transparent;
   border-radius: 50%;
   fill: #afb1b8;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -356,6 +417,8 @@ img {
 .social-link-icon {
   width: 20px;
   height: 20px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-icon:hover,
 .social-link-icon:focus {
@@ -382,6 +445,9 @@ img {
   border-radius: 4px;
   border: 1px solid #afb1b8;
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -417,6 +483,9 @@ img {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-footer-link:hover,
 .social-footer-link:focus {
@@ -468,6 +537,41 @@ img {
   flex-wrap: wrap;
   gap: 30px;
 }
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 100%;
+  height: 100%;
+
+  padding: 63px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.overlay-description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  letter-spacing: 0.03em;
+
+  color: var(--hero-txt-cl);
+}
+.portfolio-card:hover .card-overlay {
+  transform: translateY(0);
+}
+
 .portfolio-card-container {
   padding: 20px 24px;
   border-right: 1px solid #eeeeee;
@@ -478,6 +582,8 @@ img {
 }
 .portfolio-link {
   display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
@@ -508,6 +614,11 @@ img {
   background-color: var(--light-bg-cl);
   color: var(--main-title-cl);
   cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portolio-nav-btn:hover,
 .portolio-nav-btn:focus {
